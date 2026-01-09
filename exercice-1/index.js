@@ -65,21 +65,21 @@ function findLongestWord(words){
 // NO DOPPLEGANGERS
 // *************************************************
 
-function isNumberInArray(number, array){
+// function isNumberInArray(number, array){
 
-    for(let item of array){
-        if(item===number){
-            return true;
-            break
-        }
-        else{
-            return false
-        }
-    }
-}
+//     for(let item of array){
+//         if(item===number){
+//             return true;
+//             break
+//         }
+//         else{
+//             return false
+//         }
+//     }
+// }
 
-console.log(isNumberInArray(21, [43, 54, -78, 19, 21, 42])); // doit envoyer true
-console.log(isNumberInArray(-7, [14, 28, -32, 56, 42, 19])); // doit renvoyer false
+// console.log(isNumberInArray(21, [43, 54, -78, 19, 21, 42])); // doit envoyer true
+// console.log(isNumberInArray(-7, [14, 28, -32, 56, 42, 19])); // doit renvoyer false
 
 function removeDuplicates(array){
     let newArray = array
@@ -94,9 +94,46 @@ function removeDuplicates(array){
     return newArray
 }
 
-let array = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
-console.log(removeDuplicates(array))
-array = [10, 20, 30, 40, 50, 10, 20, 30, 40, 50]
-console.log(removeDuplicates(array))
-array = [5, 4, 3, 2, 1, 5, 4, 3, 2, 1]
-console.log(removeDuplicates(array))
+// let array = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
+// console.log(removeDuplicates(array))
+// array = [10, 20, 30, 40, 50, 10, 20, 30, 40, 50]
+// console.log(removeDuplicates(array))
+// array = [5, 4, 3, 2, 1, 5, 4, 3, 2, 1]
+// console.log(removeDuplicates(array))
+
+
+
+// *************************************************
+// SORT IT
+// *************************************************
+// function isNumberInArray(number, numbers){
+
+//     for(let nb of numbers){
+//         if(nb===number){
+//             return true;
+//         }
+//     }
+//     return false
+// }
+
+// console.log(isNumberInArray(21, [43, 54, -78, 19, 21, 42]));
+
+function sortAscending(numbers){
+    let newNumbers = []
+
+    console.log(newNumbers)
+    for(let i=0;i<numbers.length;i++){
+        if(numbers[i]<newNumbers[0]){
+            newNumbers.unshift(numbers[i])
+            console.log(newNumbers)
+        }
+        else{
+            newNumbers.push(numbers[i]) 
+            console.log(newNumbers)
+        }
+    }
+    return newNumbers
+}
+
+let numbers = [5, 3, 1, 4, 2]
+console.log(sortAscending(numbers))
