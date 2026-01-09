@@ -65,15 +65,29 @@ function findLongestWord(words){
 // NO DOPPLEGANGERS
 // *************************************************
 
-function removeDuplicates(array){
-    let newArray = []
-    
+function isNumberInArray(number, array){
+
     for(let item of array){
-        for(let newItem of newArray){
-            newArray.push(item)
-            if(item!==newItem){
-                newArray.push(newItem)
-                console.log(newArray)
+        if(item===number){
+            return true;
+            break
+        }
+        else{
+            return false
+        }
+    }
+}
+
+console.log(isNumberInArray(21, [43, 54, -78, 19, 21, 42])); // doit envoyer true
+console.log(isNumberInArray(-7, [14, 28, -32, 56, 42, 19])); // doit renvoyer false
+
+function removeDuplicates(array){
+    let newArray = array
+    
+    for(let i=0; i<array.length; i++){
+        for(let x=2; x<newArray.length; x++){
+            if(array[i]===newArray[x]){
+                newArray.pop(newArray[x])
             }
         }
     }
@@ -81,4 +95,8 @@ function removeDuplicates(array){
 }
 
 let array = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
-removeDuplicates(array)
+console.log(removeDuplicates(array))
+array = [10, 20, 30, 40, 50, 10, 20, 30, 40, 50]
+console.log(removeDuplicates(array))
+array = [5, 4, 3, 2, 1, 5, 4, 3, 2, 1]
+console.log(removeDuplicates(array))
